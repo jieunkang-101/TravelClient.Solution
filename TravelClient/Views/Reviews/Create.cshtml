@@ -1,0 +1,26 @@
+@model TravelClient.Models.Review
+
+<h4>Add a New Review</h4>
+
+@using (Html.BeginForm())
+{
+  @Html.LabelFor(model => model.Author)
+  @Html.TextBoxFor(model => model.Author, new { @class = "form-control"})
+  <br>
+  @Html.LabelFor(model => model.Country)
+  @Html.TextBoxFor(model => model.Country, new { @class = "form-control"})
+  <br>
+  @Html.LabelFor(model => model.City)
+  @Html.TextBoxFor(model => model.City, new { @class = "form-control"})
+  <br>
+  @Html.LabelFor(model => model.Landmark)
+  @Html.TextBoxFor(model => model.Landmark, new { @class = "form-control"})
+  <br>
+  @Html.LabelFor(model => model.Description)
+  @Html.TextAreaFor(model => model.Description, new { @class = "form-control"})
+  <br>
+  @Html.LabelFor(model => model.Rating)
+  @Html.TextBoxFor(model => model.Rating, new { @class = "form-control"})
+  <br>
+  <input type="submit" value="Add" class="btn btn-outline-info" />
+}
