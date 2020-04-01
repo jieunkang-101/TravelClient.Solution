@@ -1,0 +1,15 @@
+@using TravelClient.Models
+
+<h2>@Model.Author's Review Details:</h2>
+<hr>
+<ul>
+  <li>Country: @Model.Country</li>
+  <li>City: @Model.City</li>
+  <li>Landmark: @Model.Landmark</li>
+  <li>Description: @Model.Description</li>
+  <li>Rating: @Model.Rating</li>
+</ul>
+<br>
+<hr>
+@Html.ActionLink("Edit Review", "Edit", new { id = Model.ReviewId }, new { @class = "btn btn-outline-info"})
+@Html.ActionLink("Delete Review", "Delete", new { id = Model.ReviewId }, new { @class = "btn btn-outline-info"})

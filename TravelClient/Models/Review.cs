@@ -21,11 +21,23 @@ namespace TravelClient.Models
       var apiCallTask = ApiHelper.GetAll();
       var result = apiCallTask.Result;
 
-      JArray jsonResponse = JsonConvert.DeserializeObject<JArray>(result); //The API call results in a JSON array
+      JArray jsonResponse = JsonConvert.DeserializeObject<JArray>(result); 
       List<Review> reviewList = JsonConvert.DeserializeObject<List<Review>>(jsonResponse.ToString());
 
       return reviewList;
     }
     
+    public static Review GetDetails(int id)
+    {
+      var apiCallTask = ApiHelper.Get(id);
+      var result = apiCallTask.Result;
+
+      JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(result);
+      Review review = JsonConvert.DeserializeObject<Review>(jsonResponse.ToString());
+
+      return review;
+    }
+
+
   }
 }    
