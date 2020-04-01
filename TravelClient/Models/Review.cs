@@ -38,6 +38,17 @@ namespace TravelClient.Models
       return review;
     }
 
+    public static Review GetRandom()
+    {
+      var apiCallTask = ApiHelper.GetRandom();
+      var result = apiCallTask.Result;
+
+      JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(result);
+      Review review = JsonConvert.DeserializeObject<Review>(jsonResponse.ToString());
+
+      return review;
+    }
+
     public static void Post(Review review)
     {
       string jsonReview = JsonConvert.SerializeObject(review);

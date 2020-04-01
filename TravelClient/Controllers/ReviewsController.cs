@@ -22,6 +22,12 @@ namespace TravelClient.Controllers
       return View(review);
     }
 
+    public IActionResult Random()
+    {
+      var review = Review.GetRandom();
+      return View(review);
+    }
+
     public IActionResult Create()
     {
       return View();
