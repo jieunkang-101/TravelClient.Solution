@@ -1,0 +1,21 @@
+<h1>All Reviews:</h1>
+
+<ol>
+@foreach (Review review in Model)
+{
+  <ul>
+    <li>ID: @review.ReviewId</li>
+    <li>Author: @review.Author</li>
+    <li>Country: @review.Country</li>
+    <li>City: @review.City</li>
+    <li>Landmark: @review.Landmark</li>
+    <li>Description: @review.Description</li>
+    <li>Rating: @review.Rating</li>
+  </ul>
+  <a href="/Reviews/Details/@(review.ReviewId)"><p>View Details</p></a>
+  
+  <br>
+}
+</ol>
+
+<p>@Html.ActionLink("Add New Review", "Create", "Reviews", null, new { @class = "btn btn-outline-info"})</p>
