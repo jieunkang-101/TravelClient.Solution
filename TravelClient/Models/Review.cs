@@ -14,6 +14,7 @@ namespace TravelClient.Models
     public string Landmark { get; set; }
     public string Description { get; set; }
     public int Rating { get; set; }
+    public DateTime Date { get; set; }
 
 
     public static List<Review> GetReviews()
