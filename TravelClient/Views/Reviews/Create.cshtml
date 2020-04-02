@@ -20,7 +20,17 @@
   @Html.TextAreaFor(model => model.Description, new { @class = "form-control"})
   <br>
   @Html.LabelFor(model => model.Rating)
-  @Html.TextBoxFor(model => model.Rating, new { @class = "form-control"})
+  <br>
+  @Html.Label("1") 
+  @Html.RadioButtonFor(model => model.Rating, 1)
+  @Html.Label("2")
+  @Html.RadioButtonFor(model => model.Rating, 2)
+  @Html.Label("3")
+  @Html.RadioButtonFor(model => model.Rating, 3)
+  @Html.Label("4")
+  @Html.RadioButtonFor(model => model.Rating, 4)
+  @Html.Label("5")
+  @Html.RadioButtonFor(model => model.Rating, 5)
   <br>
   <input type="submit" value="Add" class="btn btn-outline-info" />
 }
