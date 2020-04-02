@@ -59,5 +59,11 @@ namespace TravelClient.Controllers
       Review.Delete(id);
       return RedirectToAction("Index");
     }
+
+    public IActionResult Search(string country, string city, string landmark)
+    {
+      var searchResults = Review.Search(country, city, landmark);
+      return View("Index", searchResults);
+    }
   }
 }  

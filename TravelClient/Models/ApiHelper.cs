@@ -54,5 +54,13 @@ namespace TravelClient.Models
       request.AddHeader("Content-Type", "application/json");
       var response = await client.ExecuteTaskAsync(request);
     }
+
+    public static async Task<string> Search(string country, string city, string landmark)
+    {
+      RestClient client = new RestClient("http://localhost:5004/api");
+      RestRequest request = new RestRequest($"reviews?country={country}&city={city}&landmark={landmark}", Method.GET);
+      var response = await client.ExecuteTaskAsync(request);
+      return response.Content;
+    }
   }
 }    

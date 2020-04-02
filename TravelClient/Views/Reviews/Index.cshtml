@@ -1,5 +1,21 @@
+<h1>Search Reviews:</h1>
+<br>
+@using (Html.BeginForm("Search", "Reviews", FormMethod.Get))
+{
+  @Html.Label("Country")
+  @Html.TextBox("country")
+  <br>
+  @Html.Label("City")
+  @Html.TextBox("city")
+  <br>
+  @Html.Label("Landmark")
+  @Html.TextBox("landmark")
+  <br>
+  <input type="submit" value="Search" class="btn btn-outline-info" />
+}  
+<br>
+<hr>
 <h1>All Reviews:</h1>
-
 <ol>
 @foreach (Review review in Model)
 {
